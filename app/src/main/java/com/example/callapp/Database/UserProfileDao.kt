@@ -16,6 +16,11 @@ interface UserProfileDao {
     @Update
     suspend fun update(userProfile: PhoneLogin)
 
+    @Query("SELECT * FROM caller_app WHERE id = :uid LIMIT 1")
+    suspend fun getUserById(uid: String): PhoneLogin?
+
     @Query("SELECT * FROM caller_app")
     fun getAllUserProfiles(): LiveData<List<PhoneLogin>>
+
+
 }

@@ -16,4 +16,8 @@ class UserProfileRepository(private val userProfileDao: UserProfileDao) {
     suspend fun update(userProfile: PhoneLogin) {
         userProfileDao.update(userProfile)
     }
+
+    suspend fun getUserById(uid: Int): PhoneLogin? {
+        return userProfileDao.getUserById(uid.toString())
+    }
 }

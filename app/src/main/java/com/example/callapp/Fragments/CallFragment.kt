@@ -1,5 +1,6 @@
 package com.example.callapp.Fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -19,9 +20,9 @@ class CallFragment : Fragment() {
         binding = FragmentCallBinding.inflate(inflater, container, false)
 //        checkAndRequestPermissions()
         setupViewPager()
-//        binding.addBtn.setOnClickListener {
-//            startActivity(Intent(requireContext(),AddContactActivity::class.java))
-//        }
+        binding.addBtn.setOnClickListener {
+            startActivity(Intent(requireContext(),AddContactActivity::class.java))
+        }
         return binding.root
     }
     private fun setupViewPager() {

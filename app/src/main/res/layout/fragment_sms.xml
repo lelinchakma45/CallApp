@@ -7,36 +7,41 @@
     android:orientation="vertical"
     tools:context=".Fragments.SmsFragment">
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <androidx.cardview.widget.CardView
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:cardCornerRadius="30dp">
-            <LinearLayout
-                android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+            <ImageView
+                android:id="@+id/backBtn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/message"
+                app:tint="@color/black"/>
+
+            <TextView
+                android:id="@+id/incomingName"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="15dp">
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/search"/>
-                <EditText
-                    android:id="@+id/searchContact"
-                    android:layout_marginStart="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="20sp"
-                    android:layout_weight="1"
-                    android:hint="Search Contacts"
-                    android:textSize="14sp"
-                    android:background="@android:color/transparent"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                android:layout_marginHorizontal="10dp"
+                android:fontFamily="@font/open_sans_bold"
+                android:text="Message"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
     </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/smsHistoryList"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"/>
 
 </LinearLayout>

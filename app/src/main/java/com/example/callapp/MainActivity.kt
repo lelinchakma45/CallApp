@@ -15,5 +15,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         val navController = findNavController(R.id.fragmentContainerView)
         binding.bottomBar.setupWithNavController(navController)
+        if (intent.getBooleanExtra("navigate_to_profile", false)) {
+            navController.navigate(R.id.profileFragment)
+        }
     }
 }
